@@ -9,5 +9,10 @@
     
     <%= f.label :content, "感想" %>
     <%= f.text_area :content, class: 'form-control'%>
+    
+    <%= f.submit "投稿", class: "btn btn-info btn-xl" %>
+    <span class="picture">
+    <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
+    </span>
   <% end %>
 </div>

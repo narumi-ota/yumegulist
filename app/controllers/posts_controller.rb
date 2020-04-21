@@ -15,10 +15,10 @@ class PostsController < ApplicationController
     @post = current_user.posts.build(post_params)
     if @post.save
       flash[:success] = "投稿が完了しました"
-      #redirect_to current_user
+      redirect_to current_user
     else
       flash[:danger] = "投稿内容に不足があります"
-      #redirect_to current_user
+      redirect_to current_user
     end
   end
 
