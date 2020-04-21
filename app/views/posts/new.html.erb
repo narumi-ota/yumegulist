@@ -1,6 +1,6 @@
 <h2>Add New Post</h2>
-<%= form_for :post, url: posts_path do |f| %>
-  <div class="field">
+<div class="container">
+  <%= form_for :post, url: posts_path do |f| %>
     <%= f.label :name, "施設名" %>
     <%= f.text_area :name, class: 'form-control'%>
     
@@ -9,5 +9,5 @@
     
     <%= f.label :content, "感想" %>
     <%= f.text_area :content, class: 'form-control'%>
-  </div>
-<% end %>
+  <% end %>
+</div>
