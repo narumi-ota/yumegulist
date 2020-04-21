@@ -1,0 +1,13 @@
+<h2>Add New Post</h2>
+<%= form_for :post, url: posts_path do |f| %>
+  <div class="field">
+    <%= f.label :name, "施設名" %>
+    <%= f.text_area :name, class: 'form-control'%>
+    
+    <%= f.label :place, "場所" %>
+    <%= f.select :place, [["晴れ", "晴れ"], ["曇り", "曇り"], ["雨", "雨"], ["雪", "雪"], ["その他", "その他"]], include_blank: "選択して下さい" %>
+    
+    <%= f.label :content, "感想" %>
+    <%= f.text_area :content, class: 'form-control'%>
+  </div>
+<% end %>
