@@ -1,3 +1,4 @@
 <h2>Post detail</h2>
 <p><%= @post.name %></p>
 <p><%= @post.content %></p>
+<%= image_tag post.picture.url if post.picture? %>
