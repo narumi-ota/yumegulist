@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 ruby "2.6.3"
 
 gem 'rails',        '5.1.6'
+gem 'bcrypt',         '3.1.12'
 gem 'puma',         '3.9.1'
 gem 'sass-rails',   '5.0.6'
 gem 'uglifier',     '3.2.0'
@@ -16,6 +17,10 @@ group :development, :test do
   gem 'byebug', '9.0.6', platform: :mri
   gem "rspec-rails"
   gem "factory_bot_rails"
+end
+
+group :test do
+  gem "shoulda-matchers"
 end
 
 group :development do
