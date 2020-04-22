@@ -1,5 +1,6 @@
 <h2>All Posts</h2>
 
+<%= paginate @posts %>
 <% @posts. each do |post| %>
 <div class="card card-skin">
   <div class="card__imgframe"><%= image_tag post.picture.url if post.picture? %></div>
@@ -21,5 +22,7 @@
       </script>
       </div>
     </div>
+    <%= link_to "詳細ページ", "/posts/#{post.id}" %>
 </div>
 <% end %>
+<%= paginate @posts %>

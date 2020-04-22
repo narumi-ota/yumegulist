@@ -17,6 +17,7 @@ class UsersController < ApplicationController
   
   def show
     @user = User.find(params[:id])
+    @posts = @user.posts.all.page(params[:page]).per(8)
   end
 
   private

@@ -1,1 +1,27 @@
 <h2><%= @user.name %></h2>
+<%= paginate @posts %>
+<% @posts. each do |post| %>
+<div class="card card-skin">
+  <div class="card__imgframe"><%= image_tag post.picture.url if post.picture? %></div>
+    <div class="card__textbox">
+    <div class="card__titletext"><%= post.name %>|<%= post.place %></div>
+    <div class="card__overviewtext"><%= post.content %>
+    <p>評価：<%= post.rate.to_s %>点</p>
+      <div id="star-rate-<%= post.id %>"></div>
+      <script>
+      $('#star-rate-<%= post.id %>').raty({
+      size: 36,
+      starOff:  '<%= asset_path('star-off.png') %>',
+      starOn : '<%= asset_path('star-on.png') %>',
+      starHalf: '<%= asset_path('star-half.png') %>',
+      half: true,
+      readOnly: true,
+      score: <%= post.rate %>,
+      });
+      </script>
+      </div>
+    </div>
+    <%= link_to "詳細ページ", "/posts/#{post.id}" %>
+</div>
+<% end %>
+<%= paginate @posts %>

@@ -1,18 +1,24 @@
 <h2>Post detail</h2>
 <p><%= @post.name %></p>
-<p><%= post.place %></p>
+<p><%= @post.place %></p>
 <p><%= @post.content %></p>
-<%= image_tag post.picture.url if post.picture? %>
-<p>評価：<%= post.rate.to_s %>点<br> 
-  <div id="star-rate-<%= post.id %>"></div>
+<%= image_tag @post.picture.url if @post.picture? %>
+<p>評価：<%= @post.rate.to_s %>点<br> 
+  <div id="star-rate-<%= @post.id %>"></div>
     <script>
-      $('#star-rate-<%= post.id %>').raty({
+      $('#star-rate-<%= @post.id %>').raty({
       size: 36,
       starOff:  '<%= asset_path('star-off.png') %>',
       starOn : '<%= asset_path('star-on.png') %>',
       starHalf: '<%= asset_path('star-half.png') %>',
       half: true,
       readOnly: true,
-      score: <%= post.rate %>,
+      score: <%= @post.rate %>,
       });
     </script>
+<% if logged_in? %>
+<%= link_to "私のYUMEGUリストへ", current_user %>
+<%= link_to "投稿一覧へ", posts_path %>
+<% else %>
+<%= link_to "投稿一覧へ", posts_path %>
+<% end %>
