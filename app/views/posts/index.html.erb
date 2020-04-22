@@ -1,9 +1,12 @@
 <h2>All Posts</h2>
-<ul>
+
 <% @posts. each do |post| %>
-<li><%= post.name %></li>
-<li><%= post.content %></li>
-<li>評価：<%= post.rate.to_s %>点</li> 
+<div class="card card-skin">
+  <div class="card__imgframe"><%= image_tag post.picture.url if post.picture? %></div>
+    <div class="card__textbox">
+    <div class="card__titletext"><%= post.name %>|<%= post.place %></div>
+    <div class="card__overviewtext"><%= post.content %>
+    <p>評価：<%= post.rate.to_s %>点</p>
       <div id="star-rate-<%= post.id %>"></div>
       <script>
       $('#star-rate-<%= post.id %>').raty({
@@ -16,6 +19,7 @@
       score: <%= post.rate %>,
       });
       </script>
-<%= image_tag post.picture.url if post.picture? %>
+      </div>
+    </div>
+</div>
 <% end %>
-</ul>

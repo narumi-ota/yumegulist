@@ -15,7 +15,6 @@
  */
  
  .container {
-   width: 400px;
    margin: 20px auto;
  }
  
@@ -35,3 +34,43 @@ ul > li {
   margin-bottom: 5px;
 }
 
+.card{
+  width: 23%;
+  height: auto;
+  margin: 8px;
+  cursor: pointer;
+  float: left;
+}
+
+.card__imgframe{
+  width: 100%;
+  height: auto;
+  background-size: cover;
+}
+
+.card__textbox{
+  width: 100%;
+  height: auto;
+  padding: 20px 18px;
+  background: #ffffff;
+  box-sizing: border-box;
+}
+
+.card__textbox > * + *{
+  margin-top: 10px;
+}
+
+.card__titletext{
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 125%;
+}
+
+.card__overviewtext{
+  font-size: 12px;
+  line-height: 150%;
+}
+
+.card-skin{
+  box-shadow: 2px 2px 6px rgba(0,0,0,.4);
+}
