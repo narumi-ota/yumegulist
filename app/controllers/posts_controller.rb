@@ -9,6 +9,7 @@ class PostsController < ApplicationController
   end
   
   def new
+    
   end
   
   def create
@@ -31,6 +32,6 @@ class PostsController < ApplicationController
     private
 
     def post_params
-      params.require(:post).permit(:name, :content, :place, :rate, :picture)
+      params.require(:post).permit(:name, :content, :place, :rate, :picture, :latitude, :longitude)
     end
 end
