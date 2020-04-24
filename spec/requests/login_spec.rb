@@ -6,13 +6,11 @@ RSpec.feature "Login", type: :feature do
   # ログインに成功する
   scenario "user successfully login" do
     valid_login(user)
-
     expect(current_path).to eq user_path(user)
-    expect(page).to_not have_content "ログインする"
+    expect(page).to_not have_content "ログイン"
     
     # ログアウトのテスト
     click_link "ログアウト"
-
     expect(current_path).to eq root_path
     expect(page).to have_content "ログイン"
   end

@@ -1,7 +1,9 @@
 <% provide(:title, "Login") %>
 
 <h2>ログイン</h2>
-<div class="field">
+
+<div class="col-md-6 col-md-offset-3">
+  <div class="field">
   <%= form_for(:session, url: login_path) do |f| %>
 　　<%= f.label :email, "メールアドレス" %>
     <%= f.email_field :email, class: 'form-control' %>
@@ -14,7 +16,8 @@
     <span>ログイン情報を保存する</span>
     <% end %>
 
-    <%= f.submit "ログイン", class: "btn btn-primary" %>
+    <%= f.submit "ログイン", class: "btn btn-info" %>
   <% end %>
     <p>New user? <%= link_to "Sign up now!", signup_path %></p>
+  </div>
 </div>

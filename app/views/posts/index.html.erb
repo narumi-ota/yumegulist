@@ -1,29 +1,4 @@
 <% provide(:title, "All posts") %>
 
 <h2>All Posts</h2>
-
-<% @posts. each do |post| %>
-<div class="card card-skin">
-  <div class="card__imgframe"><%= image_tag post.picture.url if post.picture? %></div>
-    <div class="card__textbox">
-    <div class="card__titletext"><%= post.name %>|<%= post.place %></div>
-    <p>評価：<%= post.rate.to_s %>点</p>
-      <div id="star-rate-<%= post.id %>"></div>
-      <script>
-      $('#star-rate-<%= post.id %>').raty({
-      size: 36,
-      starOff:  '<%= asset_path('star-off.png') %>',
-      starOn : '<%= asset_path('star-on.png') %>',
-      starHalf: '<%= asset_path('star-half.png') %>',
-      half: true,
-      readOnly: true,
-      score: <%= post.rate %>,
-      });
-      </script>
-      </div>
-      <div class="card__overviewtext"><%= truncate("#{post.content}", length:10) %>
-    </div>
-    <%= link_to "もっとみる", "/posts/#{post.id}" %>
-</div>
-<% end %>
-<%= paginate @posts %>
+<%= render 'posts/post_content' %>
