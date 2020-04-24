@@ -1,8 +1,7 @@
 <header>
   <div class="container">
-    <%= link_to "yumegulist", root_path %>
     <nav>
-      <ul>
+      <ul class="nav navbar-nav navbar-right">
         <li><%= link_to "Home", root_path %></li>
         <li><%= link_to "All posts", posts_path %></li>
         <% if logged_in? %>

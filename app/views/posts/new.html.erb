@@ -6,9 +6,10 @@
     <%= f.label :name, "施設名" %>
     <%= f.text_area :name, class: 'form-control'%>
     
-    <%= f.label :place, "場所" %>
+    <%= f.label :place, "場所" %><br>
     <%= f.select :place, [["千代田区", "千代田区"], ["中央区", "中央区"], ["港区", "港区"], ["新宿区", "新宿区"], ["文京区", "文京区"], ["台東区", "台東区"], ["墨田区", "墨田区"], ["江東区", "江東区"], ["品川区", "品川区"], ["目黒区", "目黒区"], ["大田区", "大田区"], ["世田谷区", "世田谷区"], ["渋谷区", "渋谷区"], ["中野区", "中野区"], ["杉並区", "杉並区"], ["豊島区", "豊島区"], ["北区", "北区"], ["荒川区", "荒川区"], ["板橋区", "板橋区"], ["練馬区", "練馬区"], ["足立区", "足立区"], ["葛飾区", "葛飾区"], ["江戸川区", "江戸川区"], ["その他", "その他"]],include_blank: "選択して下さい" %>
     
+    <br>
     <%= f.label :content, "感想" %>
     <%= f.text_area :content, class: 'form-control'%>
     
@@ -19,11 +20,12 @@
   　
   　<%= f.hidden_field :latitude, id: :lat %>
     <%= f.hidden_field :longitude, id: :lng %>
-  　
-    <%= f.submit "投稿", class: "btn btn-info btn-xl" %>
+
     <span class="picture">
     <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
     </span>
+    
+    <%= f.submit "投稿", class: "btn btn-info btn-xl" %>
   <% end %>
   </div>
 
@@ -38,7 +40,7 @@
     });
   </script>
     
-  <p>施設名で検索してください</p>
+  <p>位置情報を追加する場合はこちらから<br>ヒント：施設名で検索してください</p>
     <form onsubmit="return false;" >
       <input type="text", id="address">
       <button type="button" id="map_button">検索</button>

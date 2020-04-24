@@ -6,7 +6,6 @@
   <div class="card__imgframe"><%= image_tag post.picture.url if post.picture? %></div>
     <div class="card__textbox">
     <div class="card__titletext"><%= post.name %>|<%= post.place %></div>
-    <div class="card__overviewtext"><%= post.content %>
     <p>評価：<%= post.rate.to_s %>点</p>
       <div id="star-rate-<%= post.id %>"></div>
       <script>
@@ -21,8 +20,9 @@
       });
       </script>
       </div>
+      <div class="card__overviewtext"><%= truncate("#{post.content}", length:10) %>
     </div>
-    <%= link_to "詳細ページ", "/posts/#{post.id}" %>
+    <%= link_to "もっとみる", "/posts/#{post.id}" %>
 </div>
 <% end %>
 <%= paginate @posts %>
