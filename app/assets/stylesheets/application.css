@@ -79,3 +79,19 @@ ul > li {
     width: 550px;
     height: 200px;
 }
+
+.pagination>li>a {          
+  border: none;     
+  color: #696969;   
+}
+
+/* 表示しているページ番号のデザイン */
+.pagination>.active>a {     
+  background: pink;     
+  border-radius: 15px;
+}
+
+/*ホバー時のデザイン*/
+.pagination>li>a:hover {        
+  border-radius: 15px;
+}

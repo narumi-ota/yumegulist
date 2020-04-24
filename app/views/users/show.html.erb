@@ -1,5 +1,6 @@
+<% provide(:title, "My page") %>
+
 <h2><%= @user.name %></h2>
-<%= paginate @posts %>
 <% @posts. each do |post| %>
 <div class="card card-skin">
   <div class="card__imgframe"><%= image_tag post.picture.url if post.picture? %></div>

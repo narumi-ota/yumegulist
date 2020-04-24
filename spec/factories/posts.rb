@@ -4,6 +4,5 @@ FactoryBot.define do
     content { "MyText" }
     place { "MyString" }
     rate { 1.5 }
-    user { nil }
   end
 end

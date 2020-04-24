@@ -1,9 +1,11 @@
+<% provide(:title, "Post detail") %>
+
 <h2>Post detail</h2>
-<p><%= @post.name %></p>
-<p><%= @post.place %></p>
-<p><%= @post.content %></p>
-<%= image_tag @post.picture.url if @post.picture? %>
-<p>評価：<%= @post.rate.to_s %>点<br> 
+  <p><%= @post.name %></p>
+  <p><%= @post.place %></p>
+  <p><%= @post.content %></p>
+  <%= image_tag @post.picture.url if @post.picture? %>
+  <p>評価：<%= @post.rate.to_s %>点<br> 
   <div id="star-rate-<%= @post.id %>"></div>
     <script>
       $('#star-rate-<%= @post.id %>').raty({
@@ -19,34 +21,34 @@
     
     <div id="target"></div>
     
-<script async defer
+  <script async defer
     src="https://maps.googleapis.com/maps/api/js?language=ja&
     reagion=JP&key=AIzaSyA_80g3G8chEycvaMQAJfPYk9ZC6X0t8qo&callback=initMap">
-</script>
-<script>
+  </script>
+  <script>
     function initMap(){
-        'use strict';
+      'use strict';
 
-        var target = document.getElementById('target');
-
-        var map;
-        var spot = {lat: <%= @post.latitude %>, lng: <%= @post.longitude %>};
-        var marker;
+       var target = document.getElementById('target');
+       var map;
+       var spot = {lat: <%= @post.latitude %>, lng: <%= @post.longitude %>};
+       var marker;
     
-        map = new google.maps.Map(target,{
+       map = new google.maps.Map(target,{
             center: spot,
             zoom: 18,
-        });
+       });
         
-        var marker = new google.maps.Marker({
-                position: spot,
-                map: map,
-      });
-    }
-</script>
-<% if logged_in? %>
-<%= link_to "私のYUMEGUリストへ", current_user %>
-<%= link_to "投稿一覧へ", posts_path %>
-<% else %>
-<%= link_to "投稿一覧へ", posts_path %>
-<% end %>
+       var marker = new google.maps.Marker({
+            position: spot,
+            map: map,
+       });
+      }
+  </script>
+  
+  <% if logged_in? %>
+    <%= link_to "私のYUMEGUリストへ", current_user %>
+    <%= link_to "投稿一覧へ", posts_path %>
+  <% else %>
+    <%= link_to "投稿一覧へ", posts_path %>
+  <% end %>
