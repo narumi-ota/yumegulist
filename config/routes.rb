@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   get 'posts/new',   to: 'posts#new'
   get 'posts/:id',   to: 'posts#show'
   get 'users/edit',   to: 'users#edit'
+  get '/liked_index', to: 'posts#liked_index'
   resources :users
   resources :posts
+  resources :likes, only: [:create, :destroy]
 end

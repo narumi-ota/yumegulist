@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   
   def index
-    @posts = Post.all.order(created_at: "desc").page(params[:page]).per(8)
+    @posts = Post.all.page(params[:page]).per(9)
   end
   
   def show
@@ -9,7 +9,6 @@ class PostsController < ApplicationController
   end
   
   def new
-    
   end
   
   def create
@@ -19,7 +18,7 @@ class PostsController < ApplicationController
       redirect_to current_user
     else
       flash[:danger] = "投稿内容に不足があります"
-      redirect_to current_user
+      redirect_to new_post_path
     end
   end
 
@@ -27,6 +26,11 @@ class PostsController < ApplicationController
     @post.destroy
     flash[:success] = "投稿が削除されました"
     #redirect_to request.referrer || root_url
+  end
+  
+  def liked_index
+    @user = current_user
+    @likes = Like.where(user_id: @user.id).page(params[:page]).per(9)
   end
   
     private

@@ -43,7 +43,7 @@ ul > li {
 /* カード*/
 
 .card{
-  width: 23%;
+  width: 280px;
   height: auto;
   margin: 8px;
   cursor: pointer;
@@ -51,9 +51,9 @@ ul > li {
 }
 
 .card__imgframe{
-  width: 100%;
-  height: 200px;
-  background-size: cover;
+ width: 280px;
+ height: 200px;
+ object-fit: cover;
 }
 
 .card__textbox{
@@ -87,7 +87,7 @@ ul > li {
 
 .pagination>li>a {          
   border: none;     
-  color: #696969;   
+  color: #696969;
 }
 
 .pagination>.active>a {     
@@ -99,20 +99,13 @@ ul > li {
   border-radius: 15px;
 }
 
+.pagination_float {
+  clear:left;
+}
+
 /* マップサイズ*/
 
 #target {
     width: 550px;
     height: 200px;
-}
-
-
-.users {
-  list-style: none;
-  margin: 0;
-li {
-    overflow: auto;
-    padding: 10px 0;
-    border-bottom: 1px solid $gray-lighter;
-  }
 }

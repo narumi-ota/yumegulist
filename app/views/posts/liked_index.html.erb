@@ -1,4 +1,8 @@
-<% @posts. each do |post| %>
+<% provide(:title, "Liked posts") %>
+
+<h2>Liked Posts</h2>
+<% @likes.each do |like| %>
+<% post = Post.find_by(id: like.post_id) %>
 <div class="card card-skin">
   <%= image_tag "#{post.picture.url if post.picture?}" , class: "card__imgframe" %>
     <div class="card__textbox">
@@ -24,4 +28,4 @@
     <%= render "likes/like", post: post %>
 </div>
 <% end %>
-<div class="pagination_float"><%= paginate @posts %></div>
+<div class="pagination_float"><%= paginate @likes %></div>
