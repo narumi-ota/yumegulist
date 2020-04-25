@@ -11,7 +11,6 @@ module Yumegulist
     # Initialize configuration defaults for originally generated Rails version.
     config.i18n.default_locale = :ja
     config.action_view.embed_authenticity_token_in_remote_forms = true
-    config.web_console.whitelisted_ips = '106.154.134.174'
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
