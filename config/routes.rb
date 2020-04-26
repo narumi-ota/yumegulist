@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get 'users/edit',   to: 'users#edit'
   get '/liked_index', to: 'posts#liked_index'
   resources :users
+  resources :account_activations, only: [:edit]
   resources :posts
   resources :likes, only: [:create, :destroy]
 end
