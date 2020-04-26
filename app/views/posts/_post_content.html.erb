@@ -1,6 +1,6 @@
 <% @posts. each do |post| %>
 <div class="card card-skin">
-  <%= image_tag "#{post.picture.url if post.picture?}" , class: "card__imgframe" %>
+  <%= image_tag "#{post.picture.url if post.picture?}" , class: "card__imgframe", alt: "Photo" %>
     <div class="card__textbox">
     <div class="card__titletext"><%= truncate("#{post.name}", length:10) %></div>
     <p><%= post.place %></p>
@@ -25,3 +25,9 @@
 </div>
 <% end %>
 <div class="pagination_float"><%= paginate @posts %></div>
+
+<script>
+  'use strict';
+  
+  document.select
+</script>

@@ -4,6 +4,7 @@ class LikesController < ApplicationController
   def create
     @post = Post.find(params[:post_id])
     @post.iine(current_user)
+    flash[:success] = "「行きたいところリスト」に追加しました"
       respond_to do |format|
       format.html { redirect_to request.referrer || root_url }
       format.js
@@ -13,6 +14,7 @@ class LikesController < ApplicationController
   def destroy
     @post = Like.find(params[:id]).post
     @post.uniine(current_user)
+    flash[:danger] = "「行きたいところリスト」から削除しました"
       respond_to do |format|
       format.html { redirect_to request.referrer || root_url }
       format.js

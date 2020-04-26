@@ -1,10 +1,15 @@
 <% provide(:title, "Post detail") %>
 
 <h2>Post detail</h2>
-  <p><%= @post.name %></p>
-  <p><%= @post.place %></p>
-  <p><%= @post.content %></p>
-  <%= image_tag @post.picture.url if @post.picture? %>
+  
+  <div class="post_detail_left">
+  <% if logged_in? %>
+    <%= link_to "私のYUMEGUリストへ", current_user %>
+    <%= link_to "投稿一覧へ", posts_path %>
+  <% else %>
+    <%= link_to "投稿一覧へ", posts_path %>
+  <% end %>
+  <div class="name_frame"><p><%= @post.name %></p><%= render "likes/like", post: @post %></div>
   <p>評価：<%= @post.rate.to_s %>点<br> 
   <div id="star-rate-<%= @post.id %>"></div>
     <script>
@@ -19,7 +24,22 @@
       });
     </script>
     
+    <div class="box5">
+    <%= @post.content %>
+    </div>
+    <%= image_tag "#{@post.user.picture.url if @post.user.picture?}" , class: "user__imgframe", alt: 'user_icon' %>
+    <p><%= link_to "#{@post.user.name}", @post.user %></p>
+    </div>
+    
+    <div class="post_detail_right">
+    <p>写真：</p>
+    <%= image_tag "#{@post.picture.url if @post.picture?}" , class: "card__imgframe", alt: "Photo" %>
+    
+    <p>場所：<%= @post.place %></p>
+    <p>地図：</p>
     <div id="target"></div>
+    
+    
     
   <script async defer
     src="https://maps.googleapis.com/maps/api/js?language=ja&
@@ -45,10 +65,4 @@
        });
       }
   </script>
-  
-  <% if logged_in? %>
-    <%= link_to "私のYUMEGUリストへ", current_user %>
-    <%= link_to "投稿一覧へ", posts_path %>
-  <% else %>
-    <%= link_to "投稿一覧へ", posts_path %>
-  <% end %>
+  </div>

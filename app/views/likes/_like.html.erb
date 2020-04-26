@@ -1,13 +1,17 @@
 <% if !current_user?(post.user) %>
-  <span class="like">
+    <span class="like">
     <% if post.iine?(current_user) %>
-      <%= form_for(post.likes.find_by(user_id: current_user.id), method: :delete, remote: true) do |f| %>
-        <%= f.submit "🖤 < liked", class: "btn" %>
-    <% end %>
+      <%= form_for(post.likes.find_by(user_id: current_user.id), method: :delete) do |f| %>
+        <%= button_tag(class: "btn") do %>
+          <%= content_tag :span, "", class: "glyphicon glyphicon-heart", style: "font-size: 30px;" %>
+        <% end %>
+      <% end %>
     <% else %>
-      <%= form_for(post.likes.build, remote: true) do |f| %>
+      <%= form_for(post.likes.build) do |f| %>
         <div><%= hidden_field_tag :post_id, post.id %></div>
-        <%= f.submit "♡ < like!", class: "btn" %>
+        <%= button_tag(class: "btn") do %>
+          <%= content_tag :span, "", class: "glyphicon glyphicon-heart-empty", style: "font-size: 30px;" %>
+        <% end %>
       <% end %>
     <% end %>
   </span>
