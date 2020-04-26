@@ -42,7 +42,7 @@ class User < ApplicationRecord
     update_attribute(:remember_digest, nil)
   end
   
-    # アカウントを有効にする
+  # アカウントを有効にする
   def activate
     update_attribute(:activated,    true)
     update_attribute(:activated_at, Time.zone.now)
