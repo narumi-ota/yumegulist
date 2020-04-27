@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   
   def index
-    @posts = Post.all.page(params[:page]).per(9)
+    @posts = Post.all.page(params[:page]).per(9).search(params[:search])
   end
   
   def show
@@ -32,7 +32,7 @@ class PostsController < ApplicationController
     @user = current_user
     @likes = Like.where(user_id: @user.id).page(params[:page]).per(9)
   end
-  
+
     private
 
     def post_params

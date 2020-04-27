@@ -1,31 +1,31 @@
 <% provide(:title, "Liked posts") %>
-
-<h2>行きたいところリスト</h2>
-<% @likes.each do |like| %>
-<% post = Post.find_by(id: like.post_id) %>
-<div class="card card-skin">
-  <%= image_tag "#{post.picture.url if post.picture?}" , class: "card__imgframe" %>
-    <div class="card__textbox">
-    <div class="card__titletext"><%= truncate("#{post.name}", length:10) %></div>
-    <p><%= post.place %></p>
-    <p>評価：<%= post.rate.to_s %>点</p>
-      <div id="star-rate-<%= post.id %>"></div>
-      <script>
-      $('#star-rate-<%= post.id %>').raty({
-      size: 36,
-      starOff:  '<%= asset_path('star-off.png') %>',
-      starOn : '<%= asset_path('star-on.png') %>',
-      starHalf: '<%= asset_path('star-half.png') %>',
-      half: true,
-      readOnly: true,
-      score: <%= post.rate %>,
-      });
-      </script>
+  <h2>行きたいところリスト</h2>
+    <% @likes.each do |like| %>
+    <% post = Post.find_by(id: like.post_id) %>
+    <div class="card card-skin">
+      <%= image_tag "#{post.picture.url if post.picture?}" , class: "card__imgframe" %>
+      <div class="card__textbox">
+        <div class="card__titletext"><%= truncate("#{post.name}", length:10) %></div>
+        <p><%= post.place %></p>
+        <p>評価：<%= post.rate.to_s %>点</p>
+        <div id="star-rate-<%= post.id %>"></div>
+        <script>
+        $('#star-rate-<%= post.id %>').raty({
+        size: 36,
+        starOff:  '<%= asset_path('star-off.png') %>',
+        starOn : '<%= asset_path('star-on.png') %>',
+        starHalf: '<%= asset_path('star-half.png') %>',
+        half: true,
+        readOnly: true,
+        score: <%= post.rate %>,
+        });
+        </script>
       </div>
-      <div class="card__overviewtext"><%= truncate("#{post.content}", length:10) %>
+        <div class="card__overviewtext">
+          <%= truncate("#{post.content}", length:10) %>
+        </div>
+        <%= link_to "もっとみる", "/posts/#{post.id}" %>
+        <%= render "likes/like", post: post %>
     </div>
-    <%= link_to "もっとみる", "/posts/#{post.id}" %>
-    <%= render "likes/like", post: post %>
-</div>
 <% end %>
 <div class="pagination_float"><%= paginate @likes %></div>

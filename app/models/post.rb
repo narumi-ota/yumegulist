@@ -10,6 +10,14 @@ class Post < ApplicationRecord
   validates :place, presence: true
   validates :rate, presence: true
   validate  :picture_size
+  
+  def self.search(search) 
+    if search 
+      Post.where(['place LIKE ? OR name LIKE ?', "%#{search}%","%#{search}%"])
+    else
+      Post.all
+    end
+  end
 
   private
 

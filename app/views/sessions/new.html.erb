@@ -1,26 +1,24 @@
 <% provide(:title, "Login") %>
-
-<h2>ログイン</h2>
-
-<div class="col-md-6 col-md-offset-3">
-  <div class="field">
-  <%= form_for(:session, url: login_path) do |f| %>
-　　<%= f.label :email, "メールアドレス" %>
-    <%= f.email_field :email, class: 'form-control' %>
-
-    <%= f.label :password, "パスワード" %>
-    <%= link_to "(forgot password)", new_password_reset_path %>
-    <%= f.password_field :password, class: 'form-control' %>
+  <h2>ログイン</h2>
+    <div class="col-md-6 col-md-offset-3">
+      <div class="field">
+      <%= form_for(:session, url: login_path) do |f| %>
+    　　<%= f.label :email, "メールアドレス" %>
+        <%= f.email_field :email, class: 'form-control' %>
     
-    <%= f.label :remember_me, class: "checkbox inline" do %>
-    <%= f.check_box :remember_me %>
-    <span>ログイン情報を保存する</span>
-    <% end %>
-
-    <%= f.submit "ログイン", class: "btn btn-info" %>
-  <% end %>
-    <p>New user? <%= link_to "Sign up now!", signup_path %></p>
-  </div>
-  <div class="name_frame">ご担当者様<br>下記アカウントでログインしていただき、動作確認をお願いいたします。
-    <br>email: test@example.com<br>pass: foobar</div>
-</div>
+        <%= f.label :password, "パスワード" %>
+        <%= link_to "(forgot password)", new_password_reset_path %>
+        <%= f.password_field :password, class: 'form-control' %>
+        
+        <%= f.label :remember_me, class: "checkbox inline" do %>
+        <%= f.check_box :remember_me %>
+        <span>ログイン情報を保存する</span>
+        <% end %>
+    
+        <%= f.submit "ログイン", class: "btn btn-info" %>
+      <% end %>
+        <p>New user? <%= link_to "Sign up now!", signup_path %></p>
+      </div>
+      <div class="name_frame">ご担当者様<br>下記アカウントでログインしていただき、動作確認をお願いいたします。
+      <br>email: test@example.com<br>pass: foobar</div>
+    </div>

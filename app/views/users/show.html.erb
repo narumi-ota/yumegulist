@@ -1,5 +1,4 @@
 <% provide(:title, "My page") %>
-
-<%= image_tag "#{@user.picture.url if @user.picture?}" , class: "user__imgframe", alt: 'user_icon' %>
-<h2><%= @user.name %></h2>
-<%= render 'posts/post_content' %>
+  <%= image_tag "#{@user.picture.url if @user.picture?}" , class: "user__imgframe", alt: 'user_icon' %>
+  <h2><%= @user.name %></h2>
+    <%= render 'posts/post_content' %>

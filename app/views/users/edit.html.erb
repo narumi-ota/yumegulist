@@ -1,37 +1,36 @@
 <% provide(:title, "Edit user") %>
-
-<h1>Update your profile</h1>
-<div class="col-md-6 col-md-offset-3">
-<%= image_tag "#{@user.picture.url if @user.picture?}" , class: "user__imgframe", alt: 'user_icon'  %><br>
-<%= form_for(@user) do |f| %>
-<%= render 'shared/error_messages' %>
-　
-  <%= f.label :name %>
-  <%= f.text_field :name, class: 'form-control' %>
+  <h1>Update your profile</h1>
+    <div class="col-md-6 col-md-offset-3">
+    <%= image_tag "#{@user.picture.url if @user.picture?}" , class: "user__imgframe", alt: 'user_icon'  %><br>
+    <%= form_for(@user) do |f| %>
+      <%= render 'shared/error_messages' %>
+  　
+      <%= f.label :name %>
+      <%= f.text_field :name, class: 'form-control' %>
+      
+      <%= f.label :email %>
+      <%= f.email_field :email, class: 'form-control' %>
+      
+      <%= f.label :password %>
+      <%= f.password_field :password, class: 'form-control' %>
+      
+      <%= f.label :password_confirmation, "Confirmation" %>
+      <%= f.password_field :password_confirmation, class: 'form-control' %>
+    
+      <span class="picture">
+        <p>アイコン写真を登録</p>
+        <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
+      </span>
+    
+      <%= f.submit "登録", class: "btn btn-info" %>
+    <% end %>
   
-  <%= f.label :email %>
-  <%= f.email_field :email, class: 'form-control' %>
-  
-  <%= f.label :password %>
-  <%= f.password_field :password, class: 'form-control' %>
-  
-  <%= f.label :password_confirmation, "Confirmation" %>
-  <%= f.password_field :password_confirmation, class: 'form-control' %>
-  
-  <span class="picture">
-    <p>アイコン写真を登録</p>
-    <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
-  </span>
-  
-  <%= f.submit "登録", class: "btn btn-info" %>
-<% end %>
-
-  <script type="text/javascript">
-    $('#user_picture').bind('change', function() {
-    var size_in_megabytes = this.files[0].size/1024/1024;
-    if (size_in_megabytes > 5) {
-      alert('Maximum file size is 5MB. Please choose a smaller file.');
-      }
-    });
-  </script>
-</div>
+      <script type="text/javascript">
+        $('#user_picture').bind('change', function() {
+        var size_in_megabytes = this.files[0].size/1024/1024;
+        if (size_in_megabytes > 5) {
+          alert('Maximum file size is 5MB. Please choose a smaller file.');
+          }
+        });
+      </script>
+    </div>

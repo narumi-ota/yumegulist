@@ -57,8 +57,8 @@
 }
  
 h1 {
-   font-size: 50px;
-   margin-bottom: 20px;
+  font-size: 50px;
+  margin-bottom: 20px;
 }
 
 h2 {
@@ -146,35 +146,35 @@ ul > li {
 /* マップサイズ*/
 
 #target {
-    width: 400px;
-    height: 200px;
+  width: 400px;
+  height: 200px;
 }
 
 /* 投稿詳細 */
 
 .box5 {
-    width: 400px;
-    position: relative;
-    margin: 20px;
-    padding: 20px;
-    background: #e6f4ff;
-    border-radius: 10px;/*角の丸み*/
+  width: 400px;
+  position: relative;
+  margin: 20px;
+  padding: 20px;
+  background: #e6f4ff;
+  border-radius: 10px;/*角の丸み*/
 }
 
 .box5:after {
-    position: absolute;
-    content: '';
-    top: 100%;
-    left: 30px;
-    border: 15px solid transparent;
-    border-top: 15px solid #e6f4ff;
-    width: 0;
-    height: 0;
+  position: absolute;
+  content: '';
+  top: 100%;
+  left: 30px;
+  border: 15px solid transparent;
+  border-top: 15px solid #e6f4ff;
+  width: 0;
+  height: 0;
 }
 
 .box5 p {
-    margin: 0; 
-    padding: 0;
+  margin: 0; 
+  padding: 0;
 }
 
 .post_detail_left {
@@ -187,34 +187,36 @@ ul > li {
 }
 
 .name_frame {
- position: relative;
- margin: 20px;
- padding: 20px 20px 20px 35px;
- width: 400px; 
- background-color: #fff; 
- border: 1px solid #e6f4ff; /* 枠線 */
- box-shadow: 2px 2px 2px #ccc; /* 影の色 */
+  position: relative;
+  margin: 20px;
+  padding: 20px 20px 20px 35px;
+  width: 400px; 
+  background-color: #fff; 
+  border: 1px solid #e6f4ff; /* 枠線 */
+  box-shadow: 2px 2px 2px #ccc; /* 影の色 */
 }
 .name_frame::before {
- position: absolute;
- content: '';
- top: 5px;
- left: 20px;
- height: 30px;
- border: 1.5px solid #e6f4ff; /* ホチキス色 */
- border-radius: 12px;
- box-shadow: 1px 1px 1px #333;
- transform: rotate(45deg);
-}
-
+  position: absolute;
+  content: '';
+  top: 5px;
+  left: 20px;
+  height: 30px;
+  border: 1.5px solid #e6f4ff; /* ホチキス色 */
+  border-radius: 12px;
+  box-shadow: 1px 1px 1px #333;
+  transform: rotate(45deg);
+} 
+ 
 /* アイコン写真 */
-
+ 
 .user__imgframe {
   border-radius: 50%;
   width:100px;
   height:100px;
   object-fit: cover;
 }
+
+/* 紹介ページ */
 
 .about{
   float:left;
@@ -231,7 +233,7 @@ ul > li {
   border-color: #b0e0e6;
  }
  
-  .about_like {
+.about_like {
   background-image: image-url("like.jpg");
   width: 280px;
   height: 400px;
@@ -241,7 +243,7 @@ ul > li {
   border-color: #b0e0e6;
  }
  
-  .about_liked_post {
+.about_liked_post {
   background-image: image-url("liked_list.jpg");
   width: 280px;
   height: 400px;
