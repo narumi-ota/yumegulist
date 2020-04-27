@@ -21,7 +21,7 @@
       <div class="card__overviewtext"><%= truncate("#{post.content}", length:10) %>
     </div>
     <%= link_to "もっとみる", "/posts/#{post.id}" %>
-    <%= render "likes/like", post: post %>
+    <%= render 'likes/like', post: post %>
 </div>
 <% end %>
 <div class="pagination_float"><%= paginate @posts %></div>
