@@ -12,7 +12,7 @@ class UsersController < ApplicationController
     @user.picture = "default.jpg"
     if @user.save
       @user.send_activation_email
-      flash[:info] = "メールを確認してアカウントを有効化してください"
+      flash[:info] = "Please check your email to activate your account."
       redirect_to root_url
     else
       render 'new'
