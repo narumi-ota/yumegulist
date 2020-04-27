@@ -3,9 +3,10 @@
     <nav>
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to "Home", root_path %></li>
-        <li><%= link_to "すべての投稿", posts_path %></li>
         <% if logged_in? %>
-          <li class="dropdown">
+          <li><%= link_to "すべての投稿", posts_path %></li>
+          <li><%= link_to "すべてのユーザー", users_path %></li>
+            <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               Account <b class="caret"></b>
             </a>
@@ -13,11 +14,9 @@
               <li><%= link_to "新規投稿", new_post_path %></li>
               <li><%= link_to "私のyumegulist", current_user %></li>
               <li><%= link_to "行きたいところリスト", liked_index_path %></li>
-              <li><%= link_to "すべてのユーザー", users_path %></li>
               <li><%= link_to "アカウント設定", edit_user_path(current_user) %></li>
               <li><%= link_to "ログアウト", logout_path, method: :delete %></li>
             </ul>
-          </li>
         <% else %>
           <li><%= link_to "ログイン", login_path %></li>
         <% end %>

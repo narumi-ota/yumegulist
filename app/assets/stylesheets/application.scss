@@ -46,6 +46,10 @@
   margin: 40px;
 }
 
+.center ul li {
+  display:inline;
+}
+
 .right {
   float: right;
   margin: 40px;
@@ -90,7 +94,7 @@ ul > li {
   width: 100%;
   height: auto;
   padding: 20px 18px;
-  background: #ffffff;
+  background: #fff;
   box-sizing: border-box;
 }
 
@@ -211,3 +215,38 @@ ul > li {
   height:100px;
   object-fit: cover;
 }
+
+.about{
+  float:left;
+  margin:10px;
+}
+
+ .new_post {
+  background-image: image-url("new_post.jpg");
+  width: 280px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 10%;
+  border: solid 3px;
+  border-color: #b0e0e6;
+ }
+ 
+  .about_like {
+  background-image: image-url("like.jpg");
+  width: 280px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 10%;
+  border: solid 3px;
+  border-color: #b0e0e6;
+ }
+ 
+  .about_liked_post {
+  background-image: image-url("liked_list.jpg");
+  width: 280px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 10%;
+  border: solid 3px;
+  border-color: #b0e0e6;
+ }

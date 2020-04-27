@@ -1,6 +1,6 @@
 <% provide(:title, "Liked posts") %>
 
-<h2>Liked Posts</h2>
+<h2>行きたいところリスト</h2>
 <% @likes.each do |like| %>
 <% post = Post.find_by(id: like.post_id) %>
 <div class="card card-skin">
