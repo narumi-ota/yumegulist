@@ -27,7 +27,7 @@
         <%= @post.content %>
       </div>
       <%= image_tag "#{@post.user.picture.url if @post.user.picture?}" , class: "user__imgframe", alt: 'user_icon' %>
-      <p><%= link_to "#{@post.user.name}", @post.user %></p>
+      <p><%= link_to "#{@post.user.name}", @post.user %>　　投稿日：<%= @post.created_at.strftime('%Y/%m/%d %H:%M') %></p>
     </div>
       
     <div class="post_detail_right">
