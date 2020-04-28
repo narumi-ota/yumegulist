@@ -7,17 +7,17 @@
         <%= f.email_field :email, class: 'form-control' %>
     
         <%= f.label :password, "パスワード" %>
-        <%= link_to "(forgot password)", new_password_reset_path %>
+        <%= link_to "(パスワードを忘れた際はこちら)", new_password_reset_path %>
         <%= f.password_field :password, class: 'form-control' %>
         
         <%= f.label :remember_me, class: "checkbox inline" do %>
         <%= f.check_box :remember_me %>
         <span>ログイン情報を保存する</span>
         <% end %>
-    
+
         <%= f.submit "ログイン", class: "btn btn-info" %>
       <% end %>
-        <p>New user? <%= link_to "Sign up now!", signup_path %></p>
+        <p>アカウント登録がまだの方：<%= link_to "アカウント登録はこちら", signup_path %></p>
       </div>
       <div class="name_frame">ご担当者様<br>下記アカウントでログインしていただき、動作確認をお願いいたします。
       <br>email: test@example.com<br>pass: foobar</div>

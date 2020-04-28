@@ -1,20 +1,20 @@
 <% provide(:title, "Edit user") %>
-  <h1>Update your profile</h1>
+  <h1>プロフィールを更新</h1>
     <div class="col-md-6 col-md-offset-3">
     <%= image_tag "#{@user.picture.url if @user.picture?}" , class: "user__imgframe", alt: 'user_icon'  %><br>
     <%= form_for(@user) do |f| %>
       <%= render 'shared/error_messages' %>
   　
-      <%= f.label :name %>
+      <%= f.label :name , "ユーザー名"%>
       <%= f.text_field :name, class: 'form-control' %>
       
-      <%= f.label :email %>
+      <%= f.label :email , "メールアドレス" %>
       <%= f.email_field :email, class: 'form-control' %>
       
-      <%= f.label :password %>
+      <%= f.label :password , "パスワード" %>
       <%= f.password_field :password, class: 'form-control' %>
       
-      <%= f.label :password_confirmation, "Confirmation" %>
+      <%= f.label :password_confirmation, "パスワード（確認）" %>
       <%= f.password_field :password_confirmation, class: 'form-control' %>
     
       <span class="picture">

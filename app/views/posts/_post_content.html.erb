@@ -25,6 +25,10 @@
       </div>
         <%= link_to "もっとみる", "/posts/#{post.id}" %>
         <%= render 'likes/like', post: post %>
+        <% if current_user?(post.user) %>
+        <%= link_to "投稿を削除", post, method: :delete,
+                                       data: { confirm: "You sure?" } %>
+    <% end %>
   </div>
 <% end %>
 <div class="pagination_float"><%= paginate @posts %></div>
