@@ -4,10 +4,6 @@ FactoryBot.define do
     email {"hoge@example.com"}
     password {"foobar"}
     password_confirmation {"foobar"}
-
-    trait :invalid do
-      name nil
-    end
   end
 
   factory :takashi, class: User do

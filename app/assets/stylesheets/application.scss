@@ -152,7 +152,7 @@ ul > li {
 
 /* 投稿詳細 */
 
-.box5 {
+.box {
   width: 400px;
   position: relative;
   margin: 20px;
@@ -161,7 +161,7 @@ ul > li {
   border-radius: 10px;/*角の丸み*/
 }
 
-.box5:after {
+.box:after {
   position: absolute;
   content: '';
   top: 100%;
@@ -172,7 +172,7 @@ ul > li {
   height: 0;
 }
 
-.box5 p {
+.box p {
   margin: 0; 
   padding: 0;
 }

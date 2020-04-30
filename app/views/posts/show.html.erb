@@ -1,12 +1,8 @@
 <% provide(:title, "Post detail") %>
   <h2></h2>
     <div class="post_detail_left">
-      <% if logged_in? %>
-        <%= link_to "私のYUMEGUリストへ", current_user %>
-        <%= link_to "投稿一覧へ", posts_path %>
-      <% else %>
-        <%= link_to "投稿一覧へ", posts_path %>
-      <% end %>
+      <%= link_to "私のYUMEGUリストへ", current_user %>
+      <%= link_to "投稿一覧へ", posts_path %>
       <div class="name_frame"><p><%= @post.name %></p><%= render "likes/like", post: @post %></div>
       <p>評価：<%= @post.rate.to_s %>点<br> 
       <div id="star-rate-<%= @post.id %>"></div>
@@ -23,7 +19,7 @@
         });
       </script>
       
-      <div class="box5">
+      <div class="box">
         <%= @post.content %>
       </div>
       <%= image_tag "#{@post.user.picture.url if @post.user.picture?}" , class: "user__imgframe", alt: 'user_icon' %>

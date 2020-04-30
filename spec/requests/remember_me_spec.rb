@@ -29,7 +29,7 @@ RSpec.describe "Remember me", type: :request do
                                       remember_me: '1'} }
       expect(response.cookies['remember_token']).to_not eq nil
     end
-  end 
+  end
 
   context "login without remembering" do
     it "doesn't remember cookies"do
