@@ -40,12 +40,14 @@ RSpec.describe "Users", type: :request do
   describe 'GET #edit' do
     let(:takashi) { FactoryBot.create :takashi }
 
-    it 'リクエストが成功すること' do
+    #リクエストが成功すること
+    it 'responds successfully' do
       get :edit, params: { id: takashi }
       expect(response.status).to eq 200
     end
 
-    it 'editテンプレートで表示されること' do
+    #editテンプレートで表示されること
+    it 'return edit template' do
       get :edit, params: { id: takashi }
       expect(response).to render_template :edit
     end

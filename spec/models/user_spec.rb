@@ -18,13 +18,6 @@ RSpec.describe User, type: :model do
       is_at_least(6)
     }
   end
-  
-  #Factorybotの正常性確認
-  describe 'factor bot' do
-    it 'has valid factory' do
-      expect (FactoryBot.build(:user)).to be_valid
-    end
-  end
 
   #重複したメールアドレスは無効
   it "is invalid with a duplicate email address" do
