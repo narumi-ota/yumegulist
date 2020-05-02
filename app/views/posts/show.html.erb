@@ -40,22 +40,22 @@
       </script>
     
       <script>
-      function initMap(){
-      'use strict';
-      var target = document.getElementById('target');
-      var map;
-      var spot = {lat: <%= @post.latitude %>, lng: <%= @post.longitude %>};
-      var marker;
-  
-      map = new google.maps.Map(target,{
-           center: spot,
-           zoom: 18,
-      });
-       
-      var marker = new google.maps.Marker({
-            position: spot,
-            map: map,
-       });
-      }
+        function initMap(){
+        'use strict';
+        var target = document.getElementById('target');
+        var map;
+        var spot = {lat: <%= @post.latitude %>, lng: <%= @post.longitude %>};
+        var marker;
+    
+        map = new google.maps.Map(target,{
+             center: spot,
+             zoom: 18,
+        });
+         
+        var marker = new google.maps.Marker({
+              position: spot,
+              map: map,
+         });
+        }
       </script>
     </div>
