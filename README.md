@@ -1,24 +1,19 @@
-# README
+README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+サービス名：yumegulist(ユメグリスト)
+https://yumegulist.herokuapp.com/
 
-Things you may want to cover:
+概要：
+東京の銭湯巡りをする為の、情報共有サイト
 
-* Ruby version
+想定している利用者：
+都内在住の銭湯巡りが好きな人
+もしくはこれから巡りたいと考えている人
 
-* System dependencies
+バージョン：
+Ruby 2.6.3
+Ruby on Rails 5.1.6
+Sqlite3 1.3.13
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+リリース日：
+2020年4月28日

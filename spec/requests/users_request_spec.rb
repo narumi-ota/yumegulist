@@ -11,44 +11,41 @@ RSpec.describe "Users", type: :request do
   end
   
   describe "GET #show" do
-    let(:takashi) { FactoryBot.create :takashi }
+    let(:user) { FactoryBot.create :user }
       
     it "responds successfully" do
-      get user_url takashi.id
+      get user_url user.id
       expect(response.status).to eq 200
     end
   end
   
   describe "GET #index" do
     before do
-      FactoryBot.create :takashi
-      FactoryBot.create :satoshi
-    end
-    
-    it 'responds successfully' do
-      get users_url
-      expect(response.status).to eq 200
+      @user = FactoryBot.create(:user)
     end
 
-    it 'user name exist' do
-      get users_url
-      expect(response.body).to include "Takashi"
-      expect(response.body).to include "Satoshi"
+    it 'responds successfully' do
+      valid_login @user
+      get users_path
+      expect(response).to be_success
     end
   end
   
   describe 'GET #edit' do
-    let(:takashi) { FactoryBot.create :takashi }
+    before do
+      @user = FactoryBot.create(:user)
+    end
 
     #リクエストが成功すること
     it 'responds successfully' do
-      get :edit, params: { id: takashi }
+      valid_login @user
+      visit edit_user_url @user.id
       expect(response.status).to eq 200
     end
 
     #editテンプレートで表示されること
     it 'return edit template' do
-      get :edit, params: { id: takashi }
+      get edit_user_url @user.id
       expect(response).to render_template :edit
     end
   end
