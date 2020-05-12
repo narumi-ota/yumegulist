@@ -18,7 +18,7 @@ RSpec.feature "Posts", type: :feature do
     select "中央区", from: "場所"
     fill_in "感想", with: "Test Post"
     click_button "投稿"
-    
+
     expect(page).to have_content "投稿が完了しました"
     expect(page).to have_content "Test Place"
     expect(page).to have_content "中央区"
