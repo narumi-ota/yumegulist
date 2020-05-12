@@ -1,0 +1,288 @@
+@charset "UTF-8";
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+
+ */
+/* line 18, /home/ec2-user/environment/yumegulist/app/assets/stylesheets/application.scss */
+.container {
+  margin: 20px auto;
+}
+
+/* line 22, /home/ec2-user/environment/yumegulist/app/assets/stylesheets/application.scss */
+body {
+  font-family: "Montserrat","游ゴシック",YuGothic,"ヒラギノ角ゴ ProN W3","Hiragino Kaku Gothic ProN","メイリオ",Meiryo,sans-serif;
+  font-size: 14px;
+}
+
+/* line 27, /home/ec2-user/environment/yumegulist/app/assets/stylesheets/application.scss */
+.top {
+  background-image: url(/assets/ofuro-d51d9a392a6d4503825d1a1365db49126bf197459151dd0b40b8949d69f65a7d.jpg);
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+}
+
+/* line 34, /home/ec2-user/environment/yumegulist/app/assets/stylesheets/application.scss */
+.masthead {
+  padding-top: 10rem;
+  padding-bottom: calc(10rem - 4.5rem);
+  height: 700px;
+  background: linear-gradient(to bottom, rgba(92, 77, 66, 0.8) 0%, rgba(92, 77, 66, 0.8) 100%);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+  color: white;
+}
+
+/* line 46, /home/ec2-user/environment/yumegulist/app/assets/stylesheets/application.scss */
+.center {
+  margin: 40px;
+}
+
+/* line 50, /home/ec2-user/environment/yumegulist/app/assets/stylesheets/application.scss */
+.center ul li {
+  display: inline;
+}
+
+/* line 54, /home/ec2-user/environment/yumegulist/app/assets/stylesheets/application.scss */
+.right {
+  float: right;
+  margin: 40px;
+  font-size: 16px;
+}
+
+/* line 60, /home/ec2-user/environment/yumegulist/app/assets/stylesheets/application.scss */
+h1 {
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+
+/* line 65, /home/ec2-user/environment/yumegulist/app/assets/stylesheets/application.scss */
+h2 {
+  font-size: 16px;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* line 72, /home/ec2-user/environment/yumegulist/app/assets/stylesheets/application.scss */
+ul > li {
+  margin-bottom: 5px;
+  list-style: none;
+}
+
+/* カード*/
+/* line 79, /home/ec2-user/environment/yumegulist/app/assets/stylesheets/application.scss */
+.card {
+  position: relative;
+  width: 280px;
+  height: 400px;
+  margin: 8px;
+  cursor: pointer;
+  float: left;
+}
+
+/* line 88, /home/ec2-user/environment/yumegulist/app/assets/stylesheets/application.scss */
+.card__imgframe {
+  width: 280px;
+  height: 200px;
+  object-fit: cover;
+}
+
+/* line 94, /home/ec2-user/environment/yumegulist/app/assets/stylesheets/application.scss */
+.card__textbox {
+  width: 100%;
+  height: auto;
+  padding: 20px 18px;
+  background: #fff;
+  box-sizing: border-box;
+}
+
+/* line 102, /home/ec2-user/environment/yumegulist/app/assets/stylesheets/application.scss */
+.card__textbox > * + * {
+  margin-top: 10px;
+}
+
+/* line 106, /home/ec2-user/environment/yumegulist/app/assets/stylesheets/application.scss */
+.card__titletext {
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 125%;
+}
+
+/* line 112, /home/ec2-user/environment/yumegulist/app/assets/stylesheets/application.scss */
+.card__overviewtext {
+  font-size: 12px;
+  line-height: 150%;
+}
+
+/* line 117, /home/ec2-user/environment/yumegulist/app/assets/stylesheets/application.scss */
+.card-skin {
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+/* line 121, /home/ec2-user/environment/yumegulist/app/assets/stylesheets/application.scss */
+.like {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+/* ページネーション*/
+/* line 129, /home/ec2-user/environment/yumegulist/app/assets/stylesheets/application.scss */
+.pagination > li > a {
+  border: none;
+  color: #696969;
+}
+
+/* line 134, /home/ec2-user/environment/yumegulist/app/assets/stylesheets/application.scss */
+.pagination > .active > a {
+  background: #93c9ff;
+  border-radius: 15px;
+}
+
+/* line 139, /home/ec2-user/environment/yumegulist/app/assets/stylesheets/application.scss */
+.pagination > li > a:hover {
+  border-radius: 15px;
+}
+
+/* line 143, /home/ec2-user/environment/yumegulist/app/assets/stylesheets/application.scss */
+.pagination_float {
+  clear: left;
+}
+
+/* マップサイズ*/
+/* line 149, /home/ec2-user/environment/yumegulist/app/assets/stylesheets/application.scss */
+#target {
+  width: 400px;
+  height: 200px;
+}
+
+/* 投稿詳細 */
+/* line 156, /home/ec2-user/environment/yumegulist/app/assets/stylesheets/application.scss */
+.box {
+  width: 400px;
+  position: relative;
+  margin: 20px;
+  padding: 20px;
+  background: #e6f4ff;
+  border-radius: 10px;
+  /*角の丸み*/
+}
+
+/* line 165, /home/ec2-user/environment/yumegulist/app/assets/stylesheets/application.scss */
+.box:after {
+  position: absolute;
+  content: '';
+  top: 100%;
+  left: 30px;
+  border: 15px solid transparent;
+  border-top: 15px solid #e6f4ff;
+  width: 0;
+  height: 0;
+}
+
+/* line 176, /home/ec2-user/environment/yumegulist/app/assets/stylesheets/application.scss */
+.box p {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 181, /home/ec2-user/environment/yumegulist/app/assets/stylesheets/application.scss */
+.post_detail_left {
+  float: left;
+}
+
+/* line 185, /home/ec2-user/environment/yumegulist/app/assets/stylesheets/application.scss */
+.post_detail_right {
+  float: left;
+  margin: 30px;
+}
+
+/* line 190, /home/ec2-user/environment/yumegulist/app/assets/stylesheets/application.scss */
+.name_frame {
+  position: relative;
+  margin: 20px;
+  padding: 20px 20px 20px 35px;
+  width: 400px;
+  background-color: #fff;
+  border: 1px solid #e6f4ff;
+  /* 枠線 */
+  box-shadow: 2px 2px 2px #ccc;
+  /* 影の色 */
+}
+
+/* line 199, /home/ec2-user/environment/yumegulist/app/assets/stylesheets/application.scss */
+.name_frame::before {
+  position: absolute;
+  content: '';
+  top: 5px;
+  left: 20px;
+  height: 30px;
+  border: 1.5px solid #e6f4ff;
+  /* ホチキス色 */
+  border-radius: 12px;
+  box-shadow: 1px 1px 1px #333;
+  transform: rotate(45deg);
+}
+
+/* アイコン写真 */
+/* line 213, /home/ec2-user/environment/yumegulist/app/assets/stylesheets/application.scss */
+.user__imgframe {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+/* 紹介ページ */
+/* line 222, /home/ec2-user/environment/yumegulist/app/assets/stylesheets/application.scss */
+.about {
+  float: left;
+  margin: 10px;
+}
+
+/* line 227, /home/ec2-user/environment/yumegulist/app/assets/stylesheets/application.scss */
+.new_post {
+  background-image: url(/assets/new_post-9acf5ed8bc3674f5b9355f5b863337ee568aa0e3fe531d65cfeb08ec0205968b.jpg);
+  width: 280px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 10%;
+  border: solid 3px;
+  border-color: #b0e0e6;
+}
+
+/* line 237, /home/ec2-user/environment/yumegulist/app/assets/stylesheets/application.scss */
+.about_like {
+  background-image: url(/assets/like-ee5724af246bad78db1d6b8d7deb996e44d2ef088e33a7c73cd219c152408800.jpg);
+  width: 280px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 10%;
+  border: solid 3px;
+  border-color: #b0e0e6;
+}
+
+/* line 247, /home/ec2-user/environment/yumegulist/app/assets/stylesheets/application.scss */
+.about_liked_post {
+  background-image: url(/assets/liked_list-6e97e7ef0b2d33338b8344f49c661fe3950959be6b39f5b9d3a7fef64a4574d2.jpg);
+  width: 280px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 10%;
+  border: solid 3px;
+  border-color: #b0e0e6;
+}
