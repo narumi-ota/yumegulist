@@ -1,19 +1,18 @@
-README
+<h1>README</h1>
 
-サービス名：yumegulist(ユメグリスト)
-https://yumegulist.herokuapp.com/
+<p>サービス名：yumegulist[ユ(湯)メグリスト]</p>
+<p>https://yumegulist.herokuapp.com/</p>
+<p>ログイン画面下部にテストアカウントを記載しておりますので、<br>
+動作確認をお願いします。</p>
 
-概要：
-東京の銭湯巡りをする為の、情報共有サイト
+<p>【概要】</p>
+<p>東京の銭湯巡りをする為の、情報共有サイト</p>
 
-想定している利用者：
-都内在住の銭湯巡りが好きな人
-もしくはこれから巡りたいと考えている人
-
-バージョン：
-Ruby 2.6.3
-Ruby on Rails 5.1.6
-Sqlite3 1.3.13
-
-リリース日：
-2020年4月28日
+<p>【環境】</p>
+<p>フレームワーク：Ruby on Rails 5.1.6</P>
+<p>言語：Ruby 2.6.3/JavaScript/HTML/CSS</p>
+<p>CSSフレームワーク：Bootstrap</p>
+<p>テストフレームワーク：Rspec</p>
+<p>JSライブラリ：Jquery</p>
+<p>インフラ：AWS(Cloud9/S3) heroku</p>
+<p>リリース日：2020年4月28日</p>
