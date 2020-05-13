@@ -5,7 +5,7 @@ ruby "2.6.3"
 gem 'rails',        '5.1.6'
 gem 'bcrypt',       '3.1.12'
 gem 'carrierwave',  '~> 1.2.2'
-gem 'mini_magick',  '~> 4.7.0'
+gem 'mini_magick',  '>= 4.9.4'
 gem 'puma',         '3.9.1'
 gem 'sass-rails',   '5.0.6'
 gem 'uglifier',     '3.2.0'
