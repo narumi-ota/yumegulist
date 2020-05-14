@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 ruby "2.6.3"
 
-gem 'rails',        '5.1.6'
+gem 'rails', '5.2.4.2'
 gem 'bcrypt',       '3.1.12'
 gem 'carrierwave',  '~> 1.2.2'
 gem 'mini_magick',  '>= 4.9.4'
@@ -15,6 +15,7 @@ gem 'turbolinks',   '5.0.1'
 gem 'jbuilder',     '2.6.4'
 gem 'kaminari'
 gem 'dotenv-rails'
+gem "actionview", ">= 5.2.4.2"
 
 group :development, :test do
   gem 'sqlite3',      '1.3.13'
