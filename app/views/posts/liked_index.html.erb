@@ -7,7 +7,7 @@
       <%= image_tag "#{post.user.picture.url if post.user.picture?}" , class: "user_icon", alt: 'user_icon' %>
       <div class="card__textbox">
         <div class="card__titletext"><%= truncate("#{post.name}", length:10) %></div>
-        <p><%= post.place %></p>
+        <p class="place"><%= post.place %></p>
         <p>評価：<%= post.rate.to_s %>点</p>
         <div id="star-rate-<%= post.id %>"></div>
         <script>
