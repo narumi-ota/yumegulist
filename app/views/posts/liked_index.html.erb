@@ -4,6 +4,7 @@
     <% post = Post.find_by(id: like.post_id) %>
     <div class="card card-skin">
       <%= image_tag "#{post.picture.url if post.picture?}" , class: "card__imgframe" %>
+      <%= image_tag "#{post.user.picture.url if post.user.picture?}" , class: "user_icon", alt: 'user_icon' %>
       <div class="card__textbox">
         <div class="card__titletext"><%= truncate("#{post.name}", length:10) %></div>
         <p><%= post.place %></p>
