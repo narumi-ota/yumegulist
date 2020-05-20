@@ -78,7 +78,7 @@ ul > li {
 .card{
   position: relative;
   width: 280px;
-  height: 400px;
+  height: 450px;
   margin: 8px;
   cursor: pointer;
   float: left;
@@ -116,9 +116,34 @@ ul > li {
 }
 
 .card__titletext{
-  font-size: 20px;
+  position: relative;
+  font-size: 15px;
   font-weight: bold;
-  line-height: 125%;
+  padding: 20px 20px 20px 35px;
+  width: 200px;
+  background-color: #fff; 
+  border: 1px solid #e6f4ff; /* 枠線 */
+  box-shadow: 2px 2px 2px #ccc; /* 影の色 */
+}
+
+.card__titletext::before {
+  position: absolute;
+  content: '';
+  top: 5px;
+  left: 20px;
+  height: 30px;
+  border: 1.5px solid #e6f4ff; /* ホチキス色 */
+  border-radius: 12px;
+  box-shadow: 1px 1px 1px #333;
+  transform: rotate(45deg);
+}
+
+.place {
+  border-radius:10%;
+  background-color: #66cdaa;
+  padding: 5px;
+  width:60px;
+  text-align: center;
 }
 
 .card__overviewtext{
@@ -200,6 +225,8 @@ ul > li {
 }
 
 .name_frame {
+  font-size: 20px;
+  font-weight: bold;
   position: relative;
   margin: 20px;
   padding: 20px 20px 20px 35px;
