@@ -1,6 +1,7 @@
 <% @posts. each do |post| %>
   <div class="card card-skin">
     <%= image_tag "#{post.picture.url if post.picture?}" , class: "card__imgframe", alt: "Photo" %>
+    <%= image_tag "#{post.user.picture.url if post.user.picture?}" , class: "user_icon", alt: 'user_icon' %>
     <div class="card__textbox">
       <div class="card__titletext">
         <%= truncate("#{post.name}", length:10) %>
