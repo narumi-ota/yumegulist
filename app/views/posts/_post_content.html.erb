@@ -7,7 +7,7 @@
         <%= truncate("#{post.name}", length:10) %>
       </div>
         <p class="place"><%= post.place %></p>
-        <p>評価：<%= post.rate.to_s %>点</p>
+        <p>投稿者の評価：<%= post.rate.to_s %>点｜コメント (<%= post.comments.count %>)</p>
         <div id="star-rate-<%= post.id %>"></div>
           <script>
           $('#star-rate-<%= post.id %>').raty({
@@ -29,7 +29,7 @@
         <% if current_user?(post.user) %>
         <%= link_to "投稿を削除", post, method: :delete,
                                        data: { confirm: "You sure?" } %>
-    <% end %>
+        <% end %>
   </div>
 <% end %>
 <div class="pagination_float"><%= paginate @posts %></div>

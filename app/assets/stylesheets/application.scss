@@ -122,8 +122,8 @@ ul > li {
   padding: 20px 20px 20px 35px;
   width: 200px;
   background-color: #fff; 
-  border: 1px solid #e6f4ff; /* 枠線 */
-  box-shadow: 2px 2px 2px #ccc; /* 影の色 */
+  border: 1px solid #e6f4ff;
+  box-shadow: 2px 2px 2px #ccc;
 }
 
 .card__titletext::before {
@@ -196,7 +196,7 @@ ul > li {
   margin: 20px;
   padding: 20px;
   background: #e6f4ff;
-  border-radius: 10px;/*角の丸み*/
+  border-radius: 10px;
 }
 
 .box:after {
@@ -246,11 +246,49 @@ ul > li {
   box-shadow: 1px 1px 1px #333;
   transform: rotate(45deg);
 } 
+
+.comment_field {
+ margin: auto;
+ padding: 10px;
+ width: 470px;
+ background-color: #white;
+ border-radius: 10px;
+ border: 2px solid #dcdcdc;
+}
+
+.comment_box {
+  width: 400px;
+  position: relative;
+  margin: 20px;
+  padding: 20px;
+  background:#e6f4ff;
+  border-radius: 10px;
+}
+
+.comment_box:after {
+  position: absolute;
+  content: '';
+  top: 100%;
+  left: 30px;
+  border: 15px solid transparent;
+  border-top: 15px solid #e6f4ff;
+  width: 0;
+  height: 0;
+}
+
+.comment_user {
+  border-radius: 50%;
+  width:50px;
+  height:50px;
+  object-fit: cover;
+  margin-left:20px;
+}
  
 /* アイコン写真 */
  
 .user__imgframe {
   border-radius: 50%;
+  margin-bottom: 20px;
   width:100px;
   height:100px;
   object-fit: cover;

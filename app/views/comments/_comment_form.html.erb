@@ -1,0 +1,8 @@
+<div class="container">
+  <%= form_for :comment, url: comments_path do |f| %>
+    <%= f.label :content, "コメント" %>
+    <%= f.text_area :content, class: 'form-control'%>
+    
+    <%= f.submit "投稿", class: "btn btn-info" %>
+  <% end %>
+</div>

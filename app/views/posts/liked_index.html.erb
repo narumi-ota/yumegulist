@@ -8,7 +8,7 @@
       <div class="card__textbox">
         <div class="card__titletext"><%= truncate("#{post.name}", length:10) %></div>
         <p class="place"><%= post.place %></p>
-        <p>評価：<%= post.rate.to_s %>点</p>
+        <p>投稿者の評価：<%= post.rate.to_s %>点｜コメント (<%= post.comments.count %>)</p>
         <div id="star-rate-<%= post.id %>"></div>
         <script>
         $('#star-rate-<%= post.id %>').raty({
