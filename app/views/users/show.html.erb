@@ -1,4 +1,16 @@
 <% provide(:title, "My page") %>
   <%= image_tag "#{@user.picture.url if @user.picture?}" , class: "user__imgframe", alt: 'user_icon' %>
   <h2><%= @user.name %>のyumegulist</h2>
-    <%= render 'posts/post_content' %>
+  <div class="container">
+  <ul class="nav nav-tabs">
+    <li class="nav-item"><a href="#my_list" class="nav-link active" data-toggle="tab">自分の投稿(<%= @user.posts.count %>)</a></li>
+    <li class="nav-item"><a href="#users_list" class="nav-link" data-toggle="tab">他のユーザーの投稿(<%= @user.gones.count %>)</a></li>
+  </ul>
+  <div class="tab-content py-4">
+    <div id="my_list" class="tab-pane active">
+      <%= render 'posts/post_content' %>
+    </div>
+    <div id="users_list" class="tab-pane">
+      <%= render 'posts/goned_index' %>
+    </div>
+  </div>

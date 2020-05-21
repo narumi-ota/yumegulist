@@ -2,6 +2,7 @@ class PostsController < ApplicationController
   before_action :correct_user,   only: :destroy
   
   def index
+    @user = current_user
     @posts = Post.all.page(params[:page]).per(9).search(params[:search])
   end
   

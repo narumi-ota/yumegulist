@@ -3,14 +3,18 @@
     <div id="like-link-<%= post.id %>">
       <% if current_user.likes.find_by(post_id: post.id) %>
         <%= link_to unlike_path(post.id), method: :delete, remote: true do %>
+          <span data-toggle="tooltip" title="「行きたいところリスト」に追加済みだよ！もう一回押すとリストから削除されるよ！">
           <%= button_tag(class: "btn") do %>
-  　　　    <%= content_tag :span, "", class: "glyphicon glyphicon-heart", style: "font-size: 30px; color:red;" %>
+           <%= content_tag :span, "", class: "glyphicon glyphicon-heart", style: "font-size: 30px; color:red;" %>
+          </span> 
           <% end %>
         <% end %>
       <% else %>
         <%= link_to like_path(post.id), method: :post, remote: true do %>
+          <span data-toggle="tooltip" title="♡を押すと「行きたいところリスト」に追加されるよ！">
           <%= button_tag(class: "btn") do %>
-  　　　     <%= content_tag :span, "", class: "glyphicon glyphicon-heart-empty", style: "font-size: 30px; color:red;" %>
+          <%= content_tag :span, "", class: "glyphicon glyphicon-heart-empty", style: "font-size: 30px; color:red;" %>
+          </span>
           <% end %>
         <% end %>
       <% end %>

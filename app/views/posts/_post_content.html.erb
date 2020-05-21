@@ -26,6 +26,7 @@
       </div>
         <%= link_to "もっとみる", "/posts/#{post.id}" %>
         <%= render 'likes/like', post: post %>
+        <%= render 'gones/gone', post: post %>
         <% if current_user?(post.user) %>
         <%= link_to "投稿を削除", post, method: :delete,
                                        data: { confirm: "You sure?" } %>

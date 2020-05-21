@@ -1,0 +1,30 @@
+<% @gones.each do |gone| %>
+  <% post = Post.find_by(id: gone.post_id) %>
+  <div class="card card-skin">
+    <%= image_tag "#{post.picture.url if post.picture?}" , class: "card__imgframe" %>
+    <%= image_tag "#{post.user.picture.url if post.user.picture?}" , class: "user_icon", alt: 'user_icon' %>
+    <div class="card__textbox">
+      <div class="card__titletext"><%= truncate("#{post.name}", length:10) %></div>
+      <p class="place"><%= post.place %></p>
+      <p>投稿者の評価：<%= post.rate.to_s %>点｜コメント (<%= post.comments.count %>)</p>
+      <div id="star-rate-<%= post.id %>"></div>
+      <script>
+      $('#star-rate-<%= post.id %>').raty({
+      size: 36,
+      starOff:  '<%= asset_path('star-off.png') %>',
+      starOn : '<%= asset_path('star-on.png') %>',
+      starHalf: '<%= asset_path('star-half.png') %>',
+      half: true,
+      readOnly: true,
+      score: <%= post.rate %>,
+      });
+      </script>
+    </div>
+      <div class="card__overviewtext">
+        <%= truncate("#{post.content}", length:10) %>
+      </div>
+      <%= link_to "もっとみる", "/posts/#{post.id}" %>
+      <%= render "gones/gone", post: post %>
+  </div>
+<% end %>
+<div class="pagination_float"><%= paginate @gones %></div>

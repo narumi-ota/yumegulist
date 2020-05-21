@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   get '/liked_index', to: 'posts#liked_index'
   post   '/like/:post_id', to: 'likes#like',   as: 'like'
   delete '/like/:post_id', to: 'likes#unlike', as: 'unlike'
+  post   '/gone/:post_id', to: 'gones#gone',   as: 'gone'
+  delete '/gone/:post_id', to: 'gones#ungone', as: 'ungone'
   resources :users
   resources :account_activations, only: [:edit]
   resources :password_resets,     only: [:new, :create, :edit, :update]

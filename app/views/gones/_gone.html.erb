@@ -1,0 +1,23 @@
+<% if !current_user?(post.user) %>
+  <div class="star">
+    <div id="gone-link-<%= post.id %>">
+      <% if current_user.gones.find_by(post_id: post.id) %>
+        <%= link_to ungone_path(post.id), method: :delete, remote: true do %>
+          <span data-toggle="tooltip" title="「私のyumegulist」に追加済みだよ！もう一回押すとリストから削除されるよ！">
+          <%= button_tag(class: "btn") do %>
+          <%= content_tag :span, "", class: "glyphicon glyphicon-star", style: "font-size: 30px; color:yellow;" %>
+          </span>
+          <% end %>
+        <% end %>
+      <% else %>
+        <%= link_to gone_path(post.id), method: :post, remote: true do %>
+          <span data-toggle="tooltip" title="☆を押すと「私のyumegulist」に追加されるよ！">
+          <%= button_tag(class: "btn") do %>
+          <%= content_tag :span, "", class: "glyphicon glyphicon-star-empty", style: "font-size: 30px; color:yellow;" %>
+          </span>
+          <% end %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+<% end %>

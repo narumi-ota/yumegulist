@@ -26,7 +26,8 @@
           <%= truncate("#{post.content}", length:10) %>
         </div>
         <%= link_to "もっとみる", "/posts/#{post.id}" %>
-        <%= render "likes/like", post: post %>
+        <%= render 'likes/like', post: post %>
+        <%= render "gones/gone", post: post %>
     </div>
 <% end %>
 <div class="pagination_float"><%= paginate @likes %></div>
