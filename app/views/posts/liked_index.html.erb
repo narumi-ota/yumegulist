@@ -1,5 +1,6 @@
 <% provide(:title, "Liked posts") %>
   <h2>行きたいところリスト</h2>
+  <p class="message_frame">実際に行ってみよう。<br>☆を押して「私のyumegulist」に追加してみてね！</p>
     <% @likes.each do |like| %>
     <% post = Post.find_by(id: like.post_id) %>
     <div class="card card-skin">
@@ -26,7 +27,6 @@
           <%= truncate("#{post.content}", length:10) %>
         </div>
         <%= link_to "もっとみる", "/posts/#{post.id}" %>
-        <%= render 'likes/like', post: post %>
         <%= render "gones/gone", post: post %>
     </div>
 <% end %>

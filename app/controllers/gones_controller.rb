@@ -4,6 +4,8 @@ class GonesController < ApplicationController
   def gone
     gone = current_user.gones.new(post_id: @post.id)
     gone.save
+    like = current_user.likes.find_by(post_id: @post.id)
+    like.destroy
   end
   
   def ungone
