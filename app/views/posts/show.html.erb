@@ -49,9 +49,8 @@
       
     <div class="post_detail_right">
       <p>写真：</p>
-      <%= image_tag "#{@post.picture.url if @post.picture?}" , class: "card__imgframe", alt: "Photo" %>
+      <%= image_tag "#{@post.picture.url if @post.picture?}" , class: "detail__imgframe", alt: "Photo" %>
       
-      <p>場所：<%= @post.place %></p>
       <p>地図：</p>
       
       <div id="target"></div>
@@ -80,4 +79,5 @@
          });
         }
       </script>
+      <p>場所：<span class="place"><%= @post.place %></span></p>
     </div>
