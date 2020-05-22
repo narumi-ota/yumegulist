@@ -17,17 +17,17 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.build(post_params)
     if @post.save
-      flash[:success] = "投稿が完了しました"
+      flash[:success] = "投稿が完了しました。"
       redirect_to current_user
     else
-      flash[:danger] = "投稿内容に不足があります"
+      flash[:danger] = "投稿内容に不足があります。"
       redirect_to new_post_path
     end
   end
 
   def destroy
     @post.destroy
-    flash[:success] = "投稿が削除されました"
+    flash[:success] = "投稿が削除されました。"
     redirect_to request.referrer || root_url
   end
   
