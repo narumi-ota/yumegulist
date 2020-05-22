@@ -18,8 +18,11 @@
       <%= f.password_field :password_confirmation, class: 'form-control' %>
     
       <span class="picture">
-        <p>アイコン写真を登録</p>
-        <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
+        <p>アイコン写真を登録<%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %></p>
+      </span>
+      
+      <span class="picture">
+        <p>背景写真を登録<%= f.file_field :image, accept: 'image/jpeg,image/gif,image/png' %></p>
       </span>
     
       <%= f.submit "登録", class: "btn btn-info" %>

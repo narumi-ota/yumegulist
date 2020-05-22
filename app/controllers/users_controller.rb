@@ -9,7 +9,6 @@ class UsersController < ApplicationController
   
   def create
     @user = User.new(user_params)
-    @user.picture = "images/default.jpg"
     if @user.save
       @user.send_activation_email
       flash[:info] = "メールを確認してアカウントを有効化してください。"
@@ -53,7 +52,7 @@ class UsersController < ApplicationController
 
     def user_params
       params.require(:user).permit(:name, :email, :password,
-                                   :password_confirmation, :picture)
+                                   :password_confirmation, :picture, :image)
     end
     
     def logged_in_user

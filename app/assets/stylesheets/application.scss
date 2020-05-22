@@ -15,7 +15,7 @@
  */
  
  .container {
-   margin: 20px auto;
+   margin: 30px auto;
  }
  
  body {
@@ -286,13 +286,40 @@ ul > li {
 }
  
 /* アイコン写真 */
- 
+
 .user__imgframe {
   border-radius: 50%;
   margin-bottom: 20px;
   width:100px;
   height:100px;
   object-fit: cover;
+}
+
+/* My page */
+
+.user__profile {
+  border: solid 4px;
+  border-color:white;
+  position: absolute;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  width:100px;
+  height:100px;
+  object-fit: cover;
+  top: 35%;
+  left: 15%;
+  margin-bottom:20px;
+}
+
+.user__background {
+  position: relative;
+  width:80%;
+  height:200px;
+  object-fit: cover;
+}
+
+.mypage_title {
+   margin-right:50px;
 }
 
 /* 紹介ページ */
