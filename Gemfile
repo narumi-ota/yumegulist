@@ -6,7 +6,7 @@ gem 'rails', '5.2.4.2'
 gem 'bcrypt',       '3.1.12'
 gem 'carrierwave',  '~> 1.2.2'
 gem 'mini_magick',  '>= 4.9.4'
-gem 'puma',         '>= 3.12.4'
+gem "puma", ">= 4.3.5"
 gem 'sass-rails',   '5.0.6'
 gem 'uglifier',     '3.2.0'
 gem 'coffee-rails', '4.2.2'
