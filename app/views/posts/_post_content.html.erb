@@ -6,30 +6,30 @@
       <div class="card__titletext">
         <%= truncate("#{post.name}", length:10) %>
       </div>
-        <p class="place"><%= post.place %></p>
-        <p>投稿者の評価：<%= post.rate.to_s %>点｜コメント (<%= post.comments.count %>)</p>
-        <div id="star-rate-<%= post.id %>"></div>
-          <script>
-          $('#star-rate-<%= post.id %>').raty({
-          size: 36,
-          starOff:  '<%= asset_path('star-off.png') %>',
-          starOn : '<%= asset_path('star-on.png') %>',
-          starHalf: '<%= asset_path('star-half.png') %>',
-          half: true,
-          readOnly: true,
-          score: <%= post.rate %>,
-          });
-          </script>
+      <p class="place"><%= post.place %></p>
+      <p>投稿者の評価：<%= post.rate.to_s %>点｜コメント (<%= post.comments.count %>)</p>
+      <div id="star-rate-<%= post.id %>"></div>
+        <script>
+        $('#star-rate-<%= post.id %>').raty({
+        size: 36,
+        starOff:  '<%= asset_path('star-off.png') %>',
+        starOn : '<%= asset_path('star-on.png') %>',
+        starHalf: '<%= asset_path('star-half.png') %>',
+        half: true,
+        readOnly: true,
+        score: <%= post.rate %>,
+        });
+        </script>
     </div>
-      <div class="card__overviewtext">
-        <%= truncate("#{post.content}", length:10) %>
-      </div>
-        <%= link_to "もっとみる", "/posts/#{post.id}" %>
-        <%= render 'likes/like', post: post %>
-        <% if current_user?(post.user) %>
-        <%= link_to "投稿を削除", post, method: :delete,
-                                       data: { confirm: "You sure?" } %>
-        <% end %>
+    <div class="card__overviewtext">
+      <%= truncate("#{post.content}", length:10) %>
+    </div>
+    <%= link_to "もっとみる", "/posts/#{post.id}" %>
+    <%= render 'likes/like', post: post %>
+    <% if current_user?(post.user) %>
+    <%= link_to "投稿を削除", post, method: :delete,
+                                   data: { confirm: "You sure?" } %>
+    <% end %>
   </div>
 <% end %>
 <div class="pagination_float"><%= paginate @posts %></div>

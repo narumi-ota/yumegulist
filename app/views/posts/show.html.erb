@@ -1,86 +1,86 @@
 <% provide(:title, "Post detail") %>
-  <h2></h2>
-    <div class="post_detail_left">
-      <%= link_to "私のYUMEGUリストへ", current_user %>
-      <%= link_to "投稿一覧へ", posts_path %>
-      <div class="name_frame"><%= @post.name %></div>
-      <div class="info_frame">
-        <p>投稿者の評価：<%= @post.rate.to_s %>点 | コメント (<%= @post.comments.count %>)<br>
-        <div id="star-rate-<%= @post.id %>"></div>
-        <%= render "likes/like", post: @post %>
-      </div>
-      
-      <script>
-        $('#star-rate-<%= @post.id %>').raty({
-        size: 36,
-        starOff:  '<%= asset_path('star-off.png') %>',
-        starOn : '<%= asset_path('star-on.png') %>',
-        starHalf: '<%= asset_path('star-half.png') %>',
-        half: true,
-        readOnly: true,
-        score: <%= @post.rate %>,
-        });
-      </script>
-      
-      <div class="box">
-        <%= @post.content %>
-      </div>
-      <%= image_tag "#{@post.user.picture.url if @post.user.picture?}" , class: "user__imgframe", alt: 'user_icon' %>
-      <p><%= link_to "#{@post.user.name}", @post.user %>　　投稿日：<%= @post.created_at.strftime('%Y/%m/%d %H:%M') %></p>
-      <hr>
-      
-      <!-- コメントフィールド-->
-      <div class="comment_field">
-        <%= form_for [@post, @comment] do |f| %>
-          <%= f.text_field :content %>
-          <%= f.submit 'コメントする', class: "btn btn-info" %>
-          <p>(※コメントは50文字まで）</p>
-        <% end %>
-      
-        <% @comments.each do |comment| %>
-          <div class="comment_box">
-            <p><%= comment.content %><br>
-              <%= comment.created_at.strftime('%Y/%m/%d %H:%M') %>
-              | Commented by  <%= link_to "#{comment.user.name}", comment.user %>
-            </p>
-          </div>
-            <%= image_tag "#{comment.user.picture.url if comment.user.picture?}" , class: "comment_user", alt: 'user_icon' %>
-        <% end %>
-        <div class="pagination_float"><%= paginate @comments %></div>
-      </div>
+　<hr>
+  <div class="post_detail_left">
+    <%= link_to "私のYUMEGUリストへ", current_user %>
+    <%= link_to "投稿一覧へ", posts_path %>
+    <div class="name_frame"><%= @post.name %></div>
+    <div class="info_frame">
+      <p>投稿者の評価：<%= @post.rate.to_s %>点 | コメント (<%= @post.comments.count %>)<br>
+      <div id="star-rate-<%= @post.id %>"></div>
+      <%= render "likes/like", post: @post %>
     </div>
-      
-    <div class="post_detail_right">
-      <p>写真：</p>
-      <%= image_tag "#{@post.picture.url if @post.picture?}" , class: "detail__imgframe", alt: "Photo" %>
-      
-      <p>地図：</p>
-      
-      <div id="target"></div>
-      
-      <script async defer
-      src="https://maps.googleapis.com/maps/api/js?language=ja&
-      reagion=JP&key=<%= ENV['GOOGLE_API_KEY'] %>&callback=initMap">
-      </script>
     
-      <script>
-        function initMap(){
-        'use strict';
-        var target = document.getElementById('target');
-        var map;
-        var spot = {lat: <%= @post.latitude %>, lng: <%= @post.longitude %>};
-        var marker;
+    <script>
+      $('#star-rate-<%= @post.id %>').raty({
+      size: 36,
+      starOff:  '<%= asset_path('star-off.png') %>',
+      starOn : '<%= asset_path('star-on.png') %>',
+      starHalf: '<%= asset_path('star-half.png') %>',
+      half: true,
+      readOnly: true,
+      score: <%= @post.rate %>,
+      });
+    </script>
     
-        map = new google.maps.Map(target,{
-             center: spot,
-             zoom: 18,
-        });
-         
-        var marker = new google.maps.Marker({
-              position: spot,
-              map: map,
-         });
-        }
-      </script>
-      <p>場所：<span class="place"><%= @post.place %></span></p>
+    <div class="box">
+      <%= @post.content %>
     </div>
+    <%= image_tag "#{@post.user.picture.url if @post.user.picture?}" , class: "user__imgframe", alt: 'user_icon' %>
+    <p><%= link_to "#{@post.user.name}", @post.user %>　　投稿日：<%= @post.created_at.strftime('%Y/%m/%d %H:%M') %></p>
+    <hr>
+    
+    <!-- コメントフィールド-->
+    <div class="comment_field">
+      <%= form_for [@post, @comment] do |f| %>
+        <%= f.text_field :content %>
+        <%= f.submit 'コメントする', class: "btn btn-info" %>
+        <p>(※コメントは50文字まで）</p>
+      <% end %>
+    
+      <% @comments.each do |comment| %>
+        <div class="comment_box">
+          <p><%= comment.content %><br>
+            <%= comment.created_at.strftime('%Y/%m/%d %H:%M') %>
+            | Commented by  <%= link_to "#{comment.user.name}", comment.user %>
+          </p>
+        </div>
+          <%= image_tag "#{comment.user.picture.url if comment.user.picture?}" , class: "comment_user", alt: 'user_icon' %>
+      <% end %>
+      <div class="pagination_float"><%= paginate @comments %></div>
+    </div>
+  </div>
+    
+  <div class="post_detail_right">
+    <p>写真：</p>
+    <%= image_tag "#{@post.picture.url if @post.picture?}" , class: "detail__imgframe", alt: "Photo" %>
+    
+    <p>地図：</p>
+    
+    <div id="target"></div>
+    
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?language=ja&
+    reagion=JP&key=<%= ENV['GOOGLE_API_KEY'] %>&callback=initMap">
+    </script>
+  
+    <script>
+      function initMap(){
+      'use strict';
+      var target = document.getElementById('target');
+      var map;
+      var spot = {lat: <%= @post.latitude %>, lng: <%= @post.longitude %>};
+      var marker;
+  
+      map = new google.maps.Map(target,{
+           center: spot,
+           zoom: 18,
+      });
+       
+      var marker = new google.maps.Marker({
+            position: spot,
+            map: map,
+       });
+      }
+    </script>
+    <p>場所：<span class="place"><%= @post.place %></span></p>
+  </div>
