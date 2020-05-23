@@ -3,9 +3,12 @@
     <div class="post_detail_left">
       <%= link_to "私のYUMEGUリストへ", current_user %>
       <%= link_to "投稿一覧へ", posts_path %>
-      <div class="name_frame"><p><%= @post.name %></p><%= render "likes/like", post: @post %></div>
-      <p>投稿者の評価：<%= @post.rate.to_s %>点 | コメント (<%= @post.comments.count %>)<br>
-      <div id="star-rate-<%= @post.id %>"></div>
+      <div class="name_frame"><%= @post.name %></div>
+      <div class="info_frame">
+        <p>投稿者の評価：<%= @post.rate.to_s %>点 | コメント (<%= @post.comments.count %>)<br>
+        <div id="star-rate-<%= @post.id %>"></div>
+        <%= render "likes/like", post: @post %>
+      </div>
       
       <script>
         $('#star-rate-<%= @post.id %>').raty({
