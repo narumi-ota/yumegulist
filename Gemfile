@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 ruby "2.6.3"
 
-gem 'rails', '5.2.4.2'
+gem 'rails', '5.2.4.3'
 gem 'bcrypt',       '3.1.12'
 gem 'carrierwave',  '~> 1.2.2'
 gem 'mini_magick',  '>= 4.9.4'
